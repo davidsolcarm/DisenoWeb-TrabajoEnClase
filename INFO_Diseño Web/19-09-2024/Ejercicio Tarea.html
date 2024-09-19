@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function setGreen_click() {
+            document.body.style.backgroundColor = "Green"
+        }
+        function setRed_click() {
+            document.body.style.backgroundColor = "Red"
+        }
+        function setBlue_click() {
+            document.body.style.backgroundColor = "Blue"
+        }
+        function reset() {
+            document.body.style.backgroundColor = "white"
+        }
+
+
+
+
+    </script>
+    <style>
+        input{
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+        }
+
+        body{
+            background-color: whitesmoke;
+        }
+
+        #botonRojo{
+            background-color: red;
+        }
+        #botonAzul{
+            background-color: blue;
+        }
+        #botonVerde{
+            background-color: green;
+        }
+        #botonreset{
+            background-color: white;
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <input type="button" value="Rojo" id="botonRojo" onclick="setRed_click()">
+    <input type="button" value="Verde" id="botonVerde" onclick="setGreen_click()">
+    <input type="button"  value="Azul" id="botonAzul" onclick="setBlue_click()">
+    <input type="button"  value="Reset" id="botonreset" onclick="reset()">
+</body>
+</html>

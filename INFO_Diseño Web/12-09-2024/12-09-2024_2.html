@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo</title>
+    <script> 
+        function BtnnSaludar_click() {
+             let nombre = document.getElementById("txtNombre").value;
+             let msg = "Hola " + nombre + "!";
+             alert(msg);
+        }
+    </script>
+</head>
+
+<body> 
+    ¿Cómo te llamas? <br>
+    <input id="txtNombre" placeholder="Escribe tu nombre"> </br>
+    <input type ="button" value="Saludar" onclick="BtnnSaludar_click()">    
+</body>
+
+</html>

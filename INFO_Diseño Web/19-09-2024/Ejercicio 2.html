@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        let arreglo = [1, true, "hola", "mundo", false, 3, 2.0];
+
+        var cad = 0;
+        var sum = 0;
+        var bool = true;
+
+        for (let i = 0; i < arreglo.length; i++) {
+            
+            let tipo = typeof(arreglo[i]);
+
+            switch(tipo) {
+                case "string":
+                    cad+=arreglo[i];
+                break;
+                case "number":
+                    sum+=arreglo[i];
+                break;
+                case "bool":
+                    bool&&arreglo[i];
+                break;
+            }
+
+        }
+
+        document.write(cad+"<br>");
+        document.write(sum+"<br>");
+        document.write(bool+"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

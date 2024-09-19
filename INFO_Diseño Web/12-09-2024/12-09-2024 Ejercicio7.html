@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soludo Personal</title>
+    <script>
+
+        let nombre;
+
+        function inicializaComponentes() {
+            nombre = document.getElementById("nombre")
+        }
+
+        function btnSaludar_click() {
+            nombre = prompt("Ingresa tu nombre")
+            alert("¡Hola " + nombre + "!")
+        }
+    </script>
+    <style>
+        table{
+            border: 1px solid black;
+            width: 500px;
+        }
+    </style>
+</head>
+<body onload="inicializaComponentes()">
+    
+    <table >
+        <tr>
+            <td>¡Realiza un Saludo!</td>
+            <td> <input type="button" value="Saludar" onclick="btnSaludar_click()"></tr>
+        </tr>
+    </table>
+    
+</body>
+</html>

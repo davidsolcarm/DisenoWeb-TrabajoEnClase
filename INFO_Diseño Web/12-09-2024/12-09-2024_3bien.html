@@ -1,0 +1,54 @@
+<html> 
+    <head> 
+        <style> 
+            td{ width:69px; } 
+        </style> 
+        <script> 
+            var txtOp1; 
+            var txtOp2; 
+            var txtRes; 
+            
+            function inicializaComponentes() { 
+                txtOp1 = document.getElementById("txtOp1"); 
+                txtOp2 = document.getElementById("txtOp2"); 
+                txtRes = document.getElementById("txtRes"); 
+            } 
+                
+            function btnLimpiar_click(){ 
+                txtOp1.value=""; 
+                txtOp2.value=""; 
+                txtRes.value=""; 
+            } 
+            
+            function btnCalcular_click(){ 
+                let op1 = Number(txtOp1.value); 
+                let op2 = Number(txtOp2.value); 
+                txtRes.value= op1 / op2; 
+                } 
+                
+        </script> 
+    </head> 
+    <body onload="inicializaComponentes()"> 
+        <table> 
+            <tr> 
+                <td colspan=2>Operando 1</td> 
+                <td>&nbsp;</td> 
+                <td colspan=2>Operando 2</td> 
+                <td>&nbsp;</td> 
+                <td colspan=2>Resultado</td> 
+                </tr> 
+            <tr> 
+                <td colspan=2> <input id="txtOp1"/> </td> 
+                <td>+</td> 
+                <td colspan=2> <input id="txtOp2"/> 
+                </td> <td>=</td> <td colspan=2> <input id="txtRes"/> </td> 
+            </tr> 
+            <tr> 
+                <td>&nbsp;</td> <td colspan=2> <input type="button" value="Limpiar" onclick="btnLimpiar_click()"/> </td> 
+                <td colspan=2>&nbsp;</td> 
+                <td colspan=2> <input type="button" value="Calcular" onclick="btnCalcular_click()"/> </td> 
+                <td>&nbsp;</td>
+             </tr> 
+        </table> 
+    </body> 
+</html>

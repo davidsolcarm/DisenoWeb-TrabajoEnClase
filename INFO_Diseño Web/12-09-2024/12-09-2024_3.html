@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas y Salidas</title>
+
+    <script>
+        function btnCalcular_click() {
+            let valor1 = document.getElementById("valor1");
+            let valor2 = document.getElementById("valor2");
+            let valor3 = valor1 + valor2;
+            let suma = document.getElementById("resultado");
+
+            suma.value = 'valor3'
+
+        }
+    </script>
+
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Operando 1</td>
+            <td></td>
+            <td>Operando 2</td>
+            <td></td>
+            <td>Operando 3</td>
+        </tr>
+        <tr>
+            <td class="celda"> <input type="text" id="valor1"> </td>
+            <td>+</td>
+            <td class="celda"> <input type="number" id="valor2"> </td>
+            <td>=</td>
+            <td class="celda" id="resultado">  </td>
+        </tr>
+    </table>
+    <input type="button" value="Limpiar" onclick="btnLimpiar_click()"> 
+    <input type="button" value="Calcular" onclick="btnCalcular_click()">
+</body>
+</html>

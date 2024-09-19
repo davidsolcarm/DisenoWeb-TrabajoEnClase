@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora simple</title>
+
+    <script>
+
+        let dividendo;
+        let divisor;
+        let respuesta;
+
+        function inicializaComponentes() {
+            dividendo = document.getElementById("dividendo");
+            divisor = document.getElementById("divisor");
+            respuesta = document.getElementById("respuesta");
+        }
+
+        function btnCalcular_click() {
+
+            
+            let op1 = Number(dividendo.value);
+            let op2 = Number(divisor.value);
+            respuesta.value = op1 / op2
+        }
+
+    </script>
+</head>
+<body onload="inicializaComponentes()">
+    
+    <input id="dividendo"> / <input id="divisor">=
+    <input id="respuesta">
+    <input type="button" value="Calcular" onclick="btnCalcular_click()">
+    
+</body>
+</html>

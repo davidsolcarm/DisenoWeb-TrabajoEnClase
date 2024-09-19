@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Edad</title>
+    <script>
+
+        let edad;
+
+        function inicializaComponentes() {
+
+        }
+
+        function verificarEdad() {
+            
+            edad = Number(prompt("Ingresa tu edad"))
+
+            if (edad >= 18) {
+                alert("Mayor de edad")
+            } else {
+                alert("Menor de edad")
+            }
+            
+        }
+
+    </script>
+</head>
+<body onload="inicializaComponentes">
+    
+    <table>
+        <tr>
+            <td><input type="button" value="Verifica tu edad" id="edad"onclick="verificarEdad()"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

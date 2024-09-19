@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function decircoordenada() {
+            document.write("<br/>Evento:" + event.type);
+            document.write("<br/>X:" + event.screenX);
+            document.write("<br/>Y:" + event.screenY);
+            document.write("<br/> TragetType:" + event.target);
+            document.write("<br/>Traget Tag Name:" + event.target.tagName)
+        }        
+        
+
+    </script>
+
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mydiv" onmouseover="decircoordenada()">
+
+    </div>
+
+    <input type="button" value="Botón" mou="manejador()">
+    
+</body>
+</html>
