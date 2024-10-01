@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var color = "";
+        var pixeles = "";
+
+        function cambioColor(colorCambio) {
+            color = colorCambio;
+            pixelSize = document.getElementById("pixelSize");
+            pixeles = pixelSize.value + "px";
+        }
+
+        function dibujar(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+
+            console.log(y)
+
+            var div = document.createElement("div");
+
+            div.style.position = "absolute";
+            div.style.backgroundColor = color;
+            div.style.height = pixeles;
+            div.style.width = pixeles;
+            div.style.top = y + "px";
+            div.style.left = x + "px";
+            div.style.border = "5px";
+            document.getElementById("main").appendChild(div);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="main" style="border: solid black; width: 300px; height: 300px;" onmousemove="dibujar(event)"></div>
+    <input type="button" value="red" style=" width:50px;" onclick="cambioColor('red')">
+    <input type="button" value="blue" style=" width:50px;" onclick="cambioColor('blue')">
+    <input type="button" value="yellow" style=" width:50px;" onclick="cambioColor('yellow')">
+    <input type="button" value="black" style=" width:50px;" onclick="cambioColor('black')">
+    <input type="button" value="erraser" style=" width:60px;" onclick="cambioColor('white')">
+    <br>
+    Pixel size: 
+    <input type="number" id="pixelSize" style=" width:50px;" >
+</body>
+</html>

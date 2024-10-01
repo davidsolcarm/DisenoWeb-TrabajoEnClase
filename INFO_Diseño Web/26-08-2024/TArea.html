@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        div{
+            margin: 15px;
+        }
+
+        h1 {
+            color: darkturquoise;
+        }
+
+        #datos {
+            display: grid;
+            place-items: center;
+            margin: 40px;
+        }
+
+        #divTablaResultados {
+            display: grid;
+            place-items: center;
+            margin: 40px;
+            border: 1px black;
+        }
+
+        #alturaMetros{
+            width: 50px;
+            height: 40px;
+            border: 1px solid darkturquoise;
+        }
+
+        #pesoKilogramos{
+            width: 50px;
+            height: 40px;
+            border: 1px solid darkturquoise;
+        }
+
+        #botonCalcular{
+            width: 200px;
+            height: 50px;
+            border-radius: 25px;
+            color:darkturquoise;
+            border: 3px solid darkturquoise;
+        }
+
+        #resultado {
+            height: 25px;
+            border-color: darkturquoise;
+            width: 100px;
+        }
+
+        #resultadoTexto {
+            color: darkslategrey;
+            height: 25px;
+            border-color: transparent;
+            width: 100px;
+        }
+        
+        tr {
+            height: 35px;
+        }
+
+        td {
+            width: 800px
+        }
+
+    </style>
+
+    <script>
+        function calcularIMC() {
+
+            // decclaracion y obtencion de los objetos
+            var alturaMetros = document.getElementById("alturaMetros");
+            var pesoKilogramos = document.getElementById("pesoKilogramos");
+            var resultado = document.getElementById("resultado");
+            var resultadoTexto = document.getElementById("resultadoTexto");
+            var ImcValue;
+            // calculo del IMC
+
+            ImcValue = pesoKilogramos.value / (alturaMetros.value * alturaMetros.value)
+
+            // Asignacion del valor IMC al cuadro de input
+            resultado.value = ImcValue
+            console.log(pesoKilogramos.value)
+
+            // check de si es obeso y cambio del valor el el input deshabilitado
+            if (ImcValue < 18.5) {
+                resultadoTexto.value = "Bajo Peso"
+            } else if (18.5 <= ImcValue && ImcValue < 24.9) {
+                resultadoTexto.value = "Peso Normal"
+            } else if (25.0 <= ImcValue && ImcValue < 29.9) {
+                resultadoTexto.value = "Sobre Peso"
+            } else if (30.0 < ImcValue) {
+                resultadoTexto.value = "Obesidad"
+            } else {
+                resultadoTexto.value = "Error"
+            }
+            
+        }
+    </script>
+
+</head>
+<body>
+    <div id="datos">
+        <h1>Calculadora de IMC</h1>
+        <div>ALTURA: <input id="alturaMetros" type="number"> metros</div>
+        <div>PESO: <input id="pesoKilogramos" type="number"> Kg</div>
+        <div><input id="botonCalcular" type="button" value="Calcular IMC" onclick="calcularIMC()"></div>
+
+        Su IMC:
+        <br>
+        <div><input id="resultado" disabled> <input id="resultadoTexto" disabled></div>
+    </div>
+
+
+    <div id="divTablaResultados">
+        <table id="tabla">
+            <tr>
+                <td colspan="2" style="color: darkturquoise; text-align: center; height: 35px;">Cómo interpretar los resultados</td>
+            </tr>
+
+            <tr>
+                <td style="background-color:rgb(10, 58, 135); color: white;">IMC</td>
+                <td style="background-color:rgb(10, 58, 135); color: white; text-align: center;">Estado del peso</td>
+            </tr>
+
+            <tr>
+                <td style="background-color:rgb(10, 58, 135); color: white;">&nbsp;&nbsp;Menor a 18.5</td>
+                <td style="background-color:rgb(228, 234, 237); color: rgb(10, 58, 135); text-align: center;">Bajo peso</td>
+            </tr>
+
+            <tr>
+                <td style="background-color:rgb(59, 174, 203); color: white;">&nbsp;&nbsp;18.5 - 24.9</td>
+                <td style="background-color:rgb(148, 212, 223); color: rgb(10, 58, 135); text-align: center;">Peso normal</td>
+            </tr>
+
+            <tr>
+                <td style="background-color:rgb(10, 58, 135); color: white;">&nbsp;&nbsp;25.0 - 29.9</td>
+                <td style="background-color:rgb(228, 234, 237); color: rgb(10, 58, 135); text-align: center;">Sobrepeso</td>
+            </tr>
+
+            <tr>
+                <td style="background-color:rgb(59, 174, 203); color: white;">&nbsp;&nbsp;30.0 y superior</td>
+                <td style="background-color:rgb(148, 212, 223); color: rgb(10, 58, 135); text-align: center;">Obesidad</td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="background-color:rgb(59, 174, 203); color: white;">&nbsp;&nbsp;IMC = el peso en kilos / (la altura en metros x la altura en metros)</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

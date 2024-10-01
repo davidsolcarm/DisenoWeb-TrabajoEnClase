@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fast Note</title>
+
+    <script src="popup.js">  </script>
+    <style>
+
+        body {
+            background-color: beige;
+            height: 1000px;
+        }
+
+        #main {
+            height: auto;
+            width: 600px;
+            background-color: ghostwhite;
+            text-align: center;
+
+        }
+        
+        #appName {
+            font-size: large;
+            font-weight: bold;
+            margin: 2px;
+            text-align: center;
+            padding-top: 7px;
+        }
+
+        #newButton {
+            margin: 5px;
+
+        }
+
+        #text {
+            min-width: 98%;
+            max-width: 98%;
+            height: auto;
+            font-size:medium;
+        }
+
+        #note {
+            background-color: white;
+            margin: 3px;
+            width: 98%;
+            min-height: 20px;
+            min-width: 20%;
+            max-width: 98%;
+            border-color: white;
+        }
+
+        #info {
+            height: auto;
+            width: 590px;
+            background-color: ghostwhite;
+            text-align: right;
+            font-weight: lighter;
+            color: grey;
+            padding-right: 10px;
+        }
+        
+    </style>
+</head>
+<body onload="inicializar()">
+
+    <div id="main">
+        <div id="appName">Free Fast Note</div>
+        <input type="button" value="New Note +" id="newButton" onclick="createNewNote_click()">
+        <br>
+        <textarea id="text"></textarea>
+    </div>
+
+    <div id="info">Info</div>
+
+</body>
+
+
+</html>

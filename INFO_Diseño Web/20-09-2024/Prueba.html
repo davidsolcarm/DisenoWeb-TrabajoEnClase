@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+
+    <script>
+        function getCursor(event) {
+            let x = event.clientX;
+            let y = event.clientY;
+            let _position = `X: ${x} Y: ${y}`;
+            let recuadro = document.getElementById('recuadro');
+            let info = document.getElementById('info');
+            
+            
+            info.style.width = _position.length + x + y + "px";
+            info.style.left = (x + 30) + "px";
+            info.style.top = (y) + "px";
+            info.innerHTML = _position;
+            recuadro.style.backgroundColor = `rgb(${x}, ${y}, ${x - y})`
+            info.style.backgroundColor = `rgb(${250 - x}, ${250 - x}, ${250 - (y - x)})`
+        }
+    </script>
+</head>
+<body>
+    <div id="recuadro" style="
+    border: 1px solid black;
+    border-style: dotted; 
+    height: 300px; 
+    width: 300px;" onmousemove="getCursor(event)">
+    </div>
+
+    <div id="info" style="
+    text-align: center; 
+    background-color: black; 
+    color: white; 
+    position: absolute;">
+    </div>
+    
+</body>
+</html>

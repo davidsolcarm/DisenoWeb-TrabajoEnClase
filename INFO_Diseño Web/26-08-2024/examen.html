@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+
+    <script>
+
+
+
+        function inicializar() {
+
+        } 
+
+
+
+        function btnCalcular_click() {
+            var cal_alumno1;
+            var cal_alumno2;
+            var cal_alumno3;
+            var cal_alumno4;
+            var cal_alumno5;
+
+            var promedio = 0;
+            var reprobados;
+            var peor;
+
+            var calificaciones = []
+
+            cal_alumno1 = document.getElementById("cal_alumno1");
+            cal_alumno2 = document.getElementById("cal_alumno2");
+            cal_alumno3 = document.getElementById("cal_alumno3");
+            cal_alumno4 = document.getElementById("cal_alumno4");
+            cal_alumno5 = document.getElementById("cal_alumno5");
+
+            promedio = document.getElementById("promedio");
+            reprobados = document.getElementById("reprobados");
+            peor = document.getElementById("peor");
+
+            calificaciones.push(Number(cal_alumno1.value))
+            calificaciones.push(Number(cal_alumno2.value))
+            calificaciones.push(Number(cal_alumno3.value))
+            calificaciones.push(Number(cal_alumno4.value))
+            calificaciones.push(Number(cal_alumno5.value))
+
+            console.log(calificaciones)
+
+            promedio.value = (calificaciones[0] + calificaciones[1] + calificaciones[2]+ calificaciones[3]+ calificaciones[4])/5
+
+            var conteo = 0
+
+            for (var i = 0; i < calificaciones.length; i++) {
+                if (Number(calificaciones[i]) < 6) {
+                    conteo += Number(1);
+                }
+            }
+
+            reprobados.value = conteo/5;
+
+            let menor = calificaciones[0];
+            for (let i = 1; i < calificaciones.length; i++) {
+                if (calificaciones[i] < menor) {
+                    menor = calificaciones[i];
+                }
+            }
+
+            for (var i = 0; i < calificaciones.length; i++) {
+                if (menor == calificaciones[i]) {
+                    peor.value = "Alumno" + (i+1) 
+                }
+            }
+
+
+        }
+
+        
+
+
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body onload="inicializar()">
+    
+    <input value="Alumno1" disabled>
+    <input id="cal_alumno1" type="number">
+    <br>
+    
+    <input value="Alumno2" disabled>
+    <input id="cal_alumno2" type="number">
+    <br>
+
+    <input value="Alumno3" disabled>
+    <input id="cal_alumno3" type="number">
+    <br>
+
+    <input value="Alumno4" disabled>
+    <input id="cal_alumno4" type="number">
+    <br>
+
+    <input value="Alumno5" disabled>
+    <input id="cal_alumno5" type="number">
+    <br>
+
+    <br>
+        <div>Promedio Grupal</div>
+        <input id="promedio" disabled>
+    <br>
+    
+    <br>
+        <div>% Reprobrados</div>
+        <input id="reprobados" disabled>
+    <br>
+
+    <br>
+        <div>Peor Alumno</div>
+        <input id="peor" disabled>
+    <br>
+    
+
+    <input type="button" value="Calcular" onclick="btnCalcular_click()">
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio_1</title>
+    <script>
+        function div_mouseover() {
+
+            let id = event.target.id;
+            console.log(id);
+            let sender = document.getElementById(id);
+            document.body.style.background = window.getComputedStyle(sender).backgroundColor;
+
+
+        }
+    </script>
+
+    <style>
+
+        div{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            border-style: dashed;
+            margin: 10px;
+        }
+
+        #cont1{
+            background-color: white;
+        }
+        #cont2{
+            background-color: black;
+        }
+        #cont3{
+            background-color: blue;
+        }
+        #cont4{
+            background-color: red;
+        }
+        #cont5{
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div id="cont1" onmouseover="div_mouseover()"></div>
+    <div id="cont2" onmouseover="div_mouseover()"></div>
+    <div id="cont3" onmouseover="div_mouseover()"></div>
+    <div id="cont4" onmouseover="div_mouseover()"></div>
+    <div id="cont5" onmouseover="div_mouseover()"></div>
+
+    
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+body {
+    background-color: #FAF7F0;
+    height: 1000px;
+    border-radius: 10px;
+}
+
+#main {
+    height: auto;
+    width: 600px;
+    background-color: #D8D2C2;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#appName {
+    font-size: x-large;
+    font-weight: bold;
+    margin: 2px;
+    align-items: center;
+    padding-top: 7px;
+
+    margin-top: 1px;
+}
+
+#newButton {
+    margin: 5px;
+    width: 40px;
+}
+
+#text {
+    min-width: 98%;
+    max-width: 98%;
+    min-height: 2 0px;
+    height: 20px;
+    font-size:medium;
+}
+
+.note {
+    background-color: white;
+    margin: 3px;
+    width: 98%;
+    min-height: 20px;
+    min-width: 20%;
+    max-width: 98%;
+    border-color: white;
+}
+
+#info button{
+    height: auto;
+    width: 590px;
+    background-color: ghostwhite;
+    text-align: right;
+    font-weight: lighter;
+    color: grey;
+    padding-right: 10px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.header-items {
+    width: 400px;
+    text-align: center;
+} 
+
+.delete-button {
+    background-color: #B17457;
+}
+
+#infoButton {
+    border-radius: 40%;
+    border-color: #D8D2C2;
+    border-width: 1px;
+}
+
+/*
+
+    Color palette:
+    
+    #4A4947 light orange
+    #FAF7F0 mid orange&brown
+    #D8D2C2 orange
+    #B17457 dark brown
+*/

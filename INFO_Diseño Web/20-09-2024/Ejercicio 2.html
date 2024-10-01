@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //atributo disabled
+        var nombre;
+        var pago;
+        var unidades;
+
+        var nombreRepetido;
+        var sueldoBruto;
+        var isr;
+        var sueldo;
+
+        function inicializar() {
+            nombre = document.getElementById("nombre");
+            pago = document.getElementById("pago");
+            unidades = document.getElementById("unidades");
+
+            nombreRepetido = document.getElementById("nombreRepetido");
+            sueldoBruto = document.getElementById("sueldoBruto");
+            isr = document.getElementById("isr");
+            sueldo = document.getElementById("sueldo");
+        }
+
+        function btnCalcular_click() {
+            nombreRepetido.value = nombre.value;
+            sueldoBruto.value = unidades.value * pago.value;
+            isr.value = sueldoBruto.value * 0.25;
+            sueldo.value = sueldoBruto.value - isr.value;
+        }
+        
+        function btnLimpiar_click() {
+            nombre.value = "";
+            pago.value = "";
+            unidades.value = "";
+
+            nombreRepetido.value = "";
+            sueldoBruto.value = "";
+            isr.value = "";
+            sueldo.value = "";
+        }
+        
+    </script>
+    <style>
+
+    </style>
+
+</head>
+<body onload="inicializar()">
+
+    <table id="tabla1">
+        <tr>Nombre trabajador<br></tr>
+        <tr><input id="nombre"><br></tr>
+        <tr>Pago por unidad de Producto<br></tr>
+        <tr><input type="number" id="pago"><br></tr>
+        <tr>Unidades de Producto<br></tr>
+        <tr><input type="number" id="unidades"><br></tr>
+        <br>
+        <tr><input type="button" value="Aceptar" onclick="btnCalcular_click()"></tr>
+        <tr> </tr>
+    </table>
+
+    <table id="tabla2">
+        <br>
+        <tr><input id="nombreRepetido" disabled><br></tr>
+        <tr>Sueldo Bruto<br></tr>
+        <tr><input type="number" id="sueldoBruto" disabled><br></tr>
+        <tr>ISR(25%)<br></tr>
+        <tr><input type="number" id="isr" disabled><br></tr>
+        <tr>Sueldo Neto<br></tr>
+        <tr><input type="number" id="sueldo" disabled><br></tr>
+        <br>    
+        <tr><input type="button" value="Limpiar" onclick="btnLimpiar_click()"></tr>
+    </table>
+    
+</body>
+</html>
+
+
