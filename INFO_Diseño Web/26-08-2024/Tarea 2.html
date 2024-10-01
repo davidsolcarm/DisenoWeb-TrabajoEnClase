@@ -4,10 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        #texto {
+            width: 600px;
+            height: 100px;
+        }
+    </style>
+
+    <script>
+
+        function btnLimpiar_click() {
+            var generoNiña = document.getElementById("generoNiña");
+            var generoNiño = document.getElementById("generoNiño");
+            var alturaPadreCentimetros = document.getElementById("alturaPadreCentimetros");
+            var alturaMadreCentimetros = document.getElementById("alturaMadreCentimetros");
+
+            generoNiña.checked = false
+            generoNiño.checked = false
+            alturaPadreCentimetros.value = 0
+            alturaMadreCentimetros.value = 0
+
+        }
+
+        function btnCalcular_click() {
+            var generoNiña = document.getElementById("generoNiña");
+            var generoNiño = document.getElementById("generoNiño");
+            var alturaPadreCentimetros = document.getElementById("alturaPadreCentimetros");
+            var alturaMadreCentimetros = document.getElementById("alturaMadreCentimetros");
+
+            var texto = document.getElementById("texto");
+
+            if (generoNiña.checked) {
+                texto.value = "Cuando sea mayor tu hija podería medir " + ( ( (Number(alturaPadreCentimetros.value) + Number(alturaMadreCentimetros.value) / 2) - 6.5)  ) + "cm de altura"
+            } else if (generoNiña.checked) {
+                texto.value = "Cuando sea mayor tu hijo podería medir " + ( ( (Number(alturaPadreCentimetros.value) + Number(alturaMadreCentimetros.value) / 2) + 6.5)  ) + "cm de altura"
+            } else {
+                
+            }
+
+        }
+    </script>
+
 </head>
 <body>
 
     <h1>Calculadora de Talla Genérica</h1>
-    
+    <div>"talla diana": talla del padre + talla de la madre dividido entre 2 (+6,5 cm si es niño / -6.5 cm si es niña)</div>
+
+    <table>
+        <tr>
+            <td>Tu hijo es...</td>
+        </tr>
+        <tr>
+            <td>Niña <input type="radio" id="generoNiña"></td>
+            <td>Niño <input type="radio" id="generoNiño"></td>
+        </tr>
+        <tr>
+            <td>La altura del padre es (en cm)?*</td>
+            <td><input type="number" value="0" id="alturaPadreCentimetros"></td>
+        </tr>
+        <tr>
+            <td>La altura de la madre es (en cm)?*</td>
+            <td><input type="number" value="0" id="alturaMadreCentimetros"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Calcular" id="btnCalcular" onclick="btnCalcular_click()"></td>
+            <td><input type="button" value="Limpiar" id="btnLimpiar" onclick="btnLimpiar_click()"></td>
+        </tr>
+
+        <tr>
+            <td><input value="Introduce tus datos para palcular" id="texto" disabled></td>
+        </tr>
+    </table>
 </body>
 </html>
