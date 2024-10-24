@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ajax.js"></script>
+    <script>
+        function cargar() {
+            var estadisticas = document.getElementById("estadisticas");
+
+            var arrayInformacion = []
+
+            for (var i = 1; i <= 10; i++) {
+                var nom = document.getElementById("nom" + i).value
+                var cal = document.getElementById("cal" + i).value
+                var arrayAlumno = []
+
+                arrayAlumno.push(nom)
+                arrayAlumno.push(Number(cal))
+                arrayInformacion.push(arrayAlumno)
+                
+            }
+            console.log("index.html: ", arrayInformacion)
+            peticionAjax("POST", "procesar.php", estadisticas, arrayInformacion)
+        }
+    </script>
+</head>
+<body>
+
+    <form action="procesar.php" method="POST">
+        <div>
+            <h1>Calificaciones</h1>
+            <div>
+                <table>
+                    <tr>
+                        <th>Alumno</th>
+                        <th>Calificación</th>
+                    </tr>
+                    <tr>
+                        <td><input value="Daniel" id="nom1" name="nom1" disabled></td>
+                        <td><input type="number" id="cal1" name="cal1" value="1"></td>
+                    </tr>
+                    <tr>
+                        <td><input value="Mario" id="nom2" name="nom2" disabled></td>
+                        <td><input type="number" id="cal2" name="cal2" value="2"></td>
+                    </tr>
+                    <tr>
+                        <td><input value="Alberto" id="nom3" name="nom3" disabled></td>
+                        <td><input type="number" id="cal3" name="cal3" value="3"></td>
+                    </tr>
+                    <tr>
+                        <td><input value="Max" id="nom4" name="nom4" disabled></td>
+                        <td><input type="number" id="cal4" name="cal4" value="4"></td>
+                    </tr>
+                    <tr>
+                        <td><input value="Samuel" id="nom5" name="nom5" disabled></td>
+                        <td><input type="number" id="cal5" name="cal5" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td><input value="David" id="nom6" name="nom6" disabled></td>
+                        <td><input type="number" id="cal6" name="cal6" value="6"></td>
+                    </tr>
+                    <tr>
+                        <td><input value="Jorge" id="nom7" name="nom7" disabled></td>
+                        <td><input type="number" id="cal7" name="cal7" value="7"></td>
+                    </tr>
+                    <tr>
+                        <td><input value="Diego" id="nom8" name="nom8" disabled></td>
+                        <td><input type="number" id="cal8" name="cal8" value="8"></td>
+                    </tr>
+                    <tr>
+                        <td><input value="Diego 2.0" id="nom9" name="nom9" disabled></td>
+                        <td><input type="number" id="cal9" name="cal9" value="9"></td>
+                    </tr>
+                    <tr>
+                        <td><input value="Diego Beta" id="nom10" name="nom10" disabled></td>
+                        <td><input type="number" id="cal10" name="cal10" value="10"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><input type="button" value="Enviar" onclick="cargar()" style="width: 150px;"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+
+    <div>
+        Resultados:
+        <div id="estadisticas" style="height: 400px; width: 400px; border: 1px solid black;">
+
+        </div>
+    </div>
+    
+</body>
+</html>

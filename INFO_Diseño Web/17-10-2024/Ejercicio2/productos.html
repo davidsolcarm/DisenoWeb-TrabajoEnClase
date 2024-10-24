@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function nombre_change() {
+            let id = event.target.id;
+            let ctrlPrecio = document.getElementById(id.replace("nombre", "precio"));   
+            let obj = JSON.parse(event.target.value);
+            ctrlPrecio.value = obj.precio;
+        }
+
+    </script>
+
+</head>
+<body>
+    <form action="nota.php" method="POST">
+        <div>
+            <h1>Productos</h1>
+            
+            <table>
+                
+                <tr>
+                    <th>Nombre</th> 
+                    <th>Precio</th> 
+                    <th>Cantidad</th> 
+                </tr>
+                <tr>
+                    <td>
+                        <select id="nombre1" name="nombre1" onchange="nombre_change()"> 
+                            <option selected disabled></option>
+                            <option value='{"producto": "Cheetos", "precio": 17}'>Cheetos</option>
+                            <option value='{"producto": "Ruffles", "precio": 20}'>Ruffles</option>
+                            <option value='{"producto": "Doritos", "precio": 18}'>Doritos</option>
+                    </td> 
+                    <td>
+                        <input id="precio1" value="0" readonly>
+                    </td> 
+                    <td>
+                        <input name="cantidad1" type="number" value="0">
+                    </td> 
+                </tr>
+    
+                <tr>
+                    <td>
+                        <select id="nombre2" name="nombre2" onchange="nombre_change()"> 
+                            <option selected disabled></option>
+                            <option value='{"producto": "Cheetos", "precio": 17}'>Cheetos</option>
+                            <option value='{"producto": "Ruffles", "precio": 20}'>Ruffles</option>
+                            <option value='{"producto": "Doritos", "precio": 18}'>Doritos</option>
+                    </td> 
+                    <td>
+                        <input id="precio2" value="0" readonly>
+                    </td> 
+                    <td>
+                        <input name="cantidad2" type="number" value="0">
+                    </td> 
+                </tr>
+    
+                <tr>
+                    <td>
+                        <select id="nombre3" name="nombre3" onchange="nombre_change()"> 
+                            <option selected disabled></option>
+                            <option value='{"producto": "Cheetos", "precio": 17}'>Cheetos</option>
+                            <option value='{"producto": "Ruffles", "precio": 20}'>Ruffles</option>
+                            <option value='{"producto": "Doritos", "precio": 18}'>Doritos</option>
+                    </td> 
+                    <td>
+                        <input id="precio3" value="0" readonly>
+                    </td> 
+                    <td>
+                        <input name="cantidad3" type="number" value="0">
+                    </td> 
+                </tr>
+    
+                <tr>
+                    <td>
+                        <select id="nombre4" name="nombre4" onchange="nombre_change()"> 
+                            <option selected disabled></option>
+                            <option value='{"producto": "Cheetos", "precio": 17}'>Cheetos</option>
+                            <option value='{"producto": "Ruffles", "precio": 20}'>Ruffles</option>
+                            <option value='{"producto": "Doritos", "precio": 18}'>Doritos</option>
+                    </td> 
+                    <td>
+                        <input id="precio4" value="0" readonly>
+                    </td> 
+                    <td>
+                        <input name="cantidad4" type="number" value="0">
+                    </td> 
+                </tr>
+    
+                <tr>
+                    <td>
+                        <select id="nombre5" name="nombre5" onchange="nombre_change()"> 
+                            <option selected disabled></option>
+                            <option value='{"producto": "Cheetos", "precio": 17}'>Cheetos</option>
+                            <option value='{"producto": "Ruffles", "precio": 20}'>Ruffles</option>
+                            <option value='{"producto": "Doritos", "precio": 18}'>Doritos</option>
+                    </td> 
+                    <td>
+                        <input id="precio5" value="0" readonly>
+                    </td> 
+                    <td>
+                        <input name="cantidad5" type="number" value="0">
+                    </td> 
+                </tr>
+    
+            </table>
+            <input type="button" value="Enviar formulario">
+        </div>
+    </form>
+    
+</body>
+</html>

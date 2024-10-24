@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="ajax.js"></script>
+        <script>
+            function cargar (){
+                ctrlInput= document.getElementById ("auxiliar");
+                peticionAjax ("GET", "datos.php",ctrlInput);
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            pais <br>
+            <select id="pais"></select><br>
+            <input type="button" value="cargar" onclick = "cargar()">
+            <input id="auxiliar"/>
+        </form>
+    </body>
+</html>
